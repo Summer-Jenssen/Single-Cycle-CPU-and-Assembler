@@ -1,0 +1,5 @@
+LDR X1 X2 X3 //the default value for X2 and X3 here is 0, so we index the data at address 0x00 and ofset 0 (1)
+LDR X2 X2 X1 //grab data at 0x01 (2)
+ADD X3 X1 X2 //add 1 + 2, save it into X3
+SUB X3 X3 X1 //X3 = 3 - 1
+STR X3 X4 X2 //Store X3 into the address 0x02 Problem: My cpu won't read the first instruction for some reason? IS it bad to have data output always enabled? My registers are all red?
