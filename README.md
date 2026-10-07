@@ -27,7 +27,7 @@ This is the first thing you are likely to see. This section features the PC (whi
 ![][image5]  
 	Last part of this mess, the data memory\! Nothing too special, it takes in an address and data value and can write to itself or be read from when needed. The MUX in the bottom left is another of the ones discussed earlier that decides whether to send output from the data memory or ALU to the registers. 
 
-2.1 Creating a recipe (Assembly Code & Binary Encoding)  
+2.1 Assembly Code & Binary Encoding 
 The CPU is very particular about what gets used in its code, so no commas or brackets will be allowed. Supported instructions, their format, and their binary encoding are given below.  
 The binary encoding for any specific register, X1-X4, runs from 00-11 in numerical order. In the formatting below, Xm is the register into which data is saved, and Xn and Xt are the registers involved in that calculation.
 
