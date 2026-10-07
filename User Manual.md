@@ -1,11 +1,11 @@
 This CPU  was an exercise to test my knowledge of CPU architecture and implement some basic functionality. I utilized Logism Evolution to create it, but if you don't have that program installed, no worries! There are plenty of pictures below showcasing all the gates and whatnot involved. Lastly, in 4.1 I walk you through setting up the demo code (as usual, pictures provided!), which is a quick and easy way to get a grasp of what it can do!
 
 
-1.1 … CPU Architecture
-2.1 … Assembly Code & Binary Encoding
+1.1 … CPU Architecture 
+2.1 … Assembly Code & Binary Encoding 
 2.2 … Creating your Instruction Memory Image 
-3.1 … Running your Program on the CPU
-4.1 … Demo Program
+3.1 … Running your Program on the CPU 
+4.1 … Demo Program 
 
 1.1 CPU Architecture
 This CPU features 4 registers, referred to as X1, X2, X3, and X4. It can load, store, add, and subtract values contained within these registers. As a note, output pins are everywhere here to allow you to easily see what values are being carried in each wire.   
