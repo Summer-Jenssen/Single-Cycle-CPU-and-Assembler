@@ -1,13 +1,13 @@
-This CPU ended up having wires all over the place, hence why it’s a “spaghetti” CPU. It was an exercise to test my knowledge of CPU architecture and implement some basic fucntionalitty. I utilized Logism Evolution to create it, but if you don't have that program, no worries! There are plenty of pictures below showcasing all the gates and whatnot involved. Lastly, in 4.1 I walk you through setting up the demo code (as usual, pictures provided!), which is a quick and easy way to get a grasp of what it can do!
+This CPU  was an exercise to test my knowledge of CPU architecture and implement some basic functionality. I utilized Logism Evolution to create it, but if you don't have that program installed, no worries! There are plenty of pictures below showcasing all the gates and whatnot involved. Lastly, in 4.1 I walk you through setting up the demo code (as usual, pictures provided!), which is a quick and easy way to get a grasp of what it can do!
 
 
-1.1 … Anatomy of spaghetti (CPU Architecture)  
-2.1 … Creating a recipe (Assembly Code & Binary Encoding)  
-2.2 … 	Fetching ingredients (Creating your Instruction Memory Image)  
-3.1 … Cooking your spaghetti (Running your Program on the CPU)  
-4.1 … Behold, the perfect spaghetti! (Demo Program)
+1.1 … CPU Architecture
+2.1 … Assembly Code & Binary Encoding
+2.2 … Creating your Instruction Memory Image 
+3.1 … Running your Program on the CPU
+4.1 … Demo Program
 
-1.1 Anatomy of Spaghetti (CPU Architecture)  
+1.1 CPU Architecture
 This CPU features 4 registers, referred to as X1, X2, X3, and X4. It can load, store, add, and subtract values contained within these registers. As a note, output pins are everywhere here to allow you to easily see what values are being carried in each wire.   
 A quick breakdown of what's going on in each section:  
 <img width="1318" height="517" alt="Screenshot 2026-03-17 142019" src="https://github.com/user-attachments/assets/690b56ce-e1c1-4c0e-8f3a-2fd397b79bb1" />
@@ -40,10 +40,10 @@ The binary encoding for any specific register, X1-X4, runs from 00-11 in numeric
 
 So, for example, ADD X3 X4 X1 (X3 \= X4 \+ X1) is 00101100\. The 8 bits for each line of assembly (instruction) here are needed since we need to be able to tell the CPU which of the 4 instructions (ADD, SUB, LDR, or STR) or 4 registers are being used. Since we need to specify one instruction and three registers on every line of code, this translates to 8 bits because to represent 4 different numbers in binary you need 2 bits, and 2\*4 different input types is 8\. 
 
-2.2 Fetching ingredients (Creating your Instruction Memory Image)  
+2.2 Creating your Instruction Memory Image 
 	To run the assembler, place it in the same folder as your assembly code. Then in the command terminal navigate to that folder and compile the assembler with python3 assembler.py (it is assumed that you are using Linux for this). The assembler will then automatically run. It will prompt you to enter a target file, this is the file with your assembly code. For example, you can enter test.txt, the file for the demo program that will be described later. Then you can specify the name of the text file you want the assembler to output the instruction memory image to, for example image.txt. If the file name does not yet exist, one will be created, otherwise any content in the output file will be overwritten. Should the demo program not correctly output for some unforeseen reason, image.txt, the output of the assembler when compiling the test program, is already provided. 
 
-3.1 … Cooking your spaghetti (Running your Program on the CPU)  
+3.1 … Running your Program on the CPU 
 	Lastly, to run the program you have just compiled, open Logisim and open the spaghetti.circ file. Right click the instruction memory at the top of the file, near where the PC register is. Select “Load Image,” and then the image file provided by the assembler.  
 <img width="1319" height="613" alt="image" src="https://github.com/user-attachments/assets/197f385e-305f-4896-a081-b83143774615" />
 ![][image6]  
@@ -55,7 +55,7 @@ So, for example, ADD X3 X4 X1 (X3 \= X4 \+ X1) is 00101100\. The 8 bits for each
 ![][image8]  
 Watch the register and data memory values change with each tick\! Note that since this CPU doesn’t support any NOP instructions, the default 00000000 is an actual instruction that will add X1 \+ X1 and save it to X1, so be careful to stop the CPU before it starts doing that, otherwise you may need to run it again to view the correct data. 
 
-4.1 … Behold, the perfect spaghetti\! (Demo Program)  
+4.1 … Demo Program 
 	The demo program provided is very simple, it simply demonstrates that the CPU can load values from the data memory at different offsets into the registers, add and subtract them, then return that sum back to the data memory at a new offset. To summarize, to run it you need to:
 
 1. Assemble the provided test.txt into an instruction image txt file readable by the CPU with the assembler.py using the python3 assembler.py command in your Linux terminal while both the .txt and .py files are in the same folder. Set the target file to test.txt and the output file to image2.txt (the name of this second one doesn’t really matter as long as you know which one it is, but the target file is important. It will error if entered incorrectly. If you name this image2.txt, you can still have image.txt as a backup if the assembler fails for some reason, which it shouldn’t.)  
